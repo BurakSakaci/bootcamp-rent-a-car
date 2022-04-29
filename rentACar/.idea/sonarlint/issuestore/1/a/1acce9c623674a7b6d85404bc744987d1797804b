@@ -1,0 +1,8 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(óö­É8ÈÆ£µ‡0
+o
+java:S6204<"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8–±©µ‡0
+n
+java:S1128"QRemove this unused import 'com.turkcell.rentACar.business.dtos.getdto.GetCarDto'.(ÛÀö½8Ó±©µ‡0
+f
+java:S1128"IRemove this unused import 'com.turkcell.rentACar.entities.concrates.Car'.(¾¦ÝÄ8Ó±©µ‡0

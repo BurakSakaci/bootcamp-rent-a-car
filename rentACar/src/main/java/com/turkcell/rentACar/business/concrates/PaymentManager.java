@@ -90,16 +90,6 @@ public class PaymentManager implements PaymentService {
 		
 		Rent rent = this.rentService.addRentForIndividualCustomer(createPaymentModel.getCreateRentModel()).getData();
 
-//		Invoice invoice = this.invoiceService.invoiceCreator(rent).getData();
-//
-//		saveCreditCard(createPaymentModel.getCreateCreditCardRequest(), cardSaverEnum, rent.getCustomer().getUserId());
-//
-//		this.posService.pos(createPaymentModel.getCreateCreditCardRequest());
-//
-//		Payment payment = paymentMapper(invoice, rent);
-//
-//		this.paymentDao.save(payment);
-
 		addRentWithPaymentAndInvoice(rent, createPaymentModel, cardSaverEnum);
 
 		return new SuccessResult(BusinessMessages.GlobalMessages.DATA_ADDED_SUCCESSFULLY);
@@ -111,16 +101,6 @@ public class PaymentManager implements PaymentService {
 			throws BusinessException {
 		
 		Rent rent = this.rentService.addRentForCorporateCustomer(createPaymentModel.getCreateRentModel()).getData();
-
-//		Invoice invoice = this.invoiceService.invoiceCreator(rent).getData();
-//
-//		saveCreditCard(createPaymentModel.getCreateCreditCardRequest(), cardSaverEnum, rent.getCustomer().getUserId());
-//
-//		this.posService.pos(createPaymentModel.getCreateCreditCardRequest());
-//
-//		Payment payment = paymentMapper(invoice, rent);
-//
-//		this.paymentDao.save(payment);
 
 		addRentWithPaymentAndInvoice(rent, createPaymentModel, cardSaverEnum);
 
