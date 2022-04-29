@@ -20,6 +20,8 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 public class AdditionalServiceManagerTest {
+    //Basic Tests
+
 
     @Mock
     private AdditionalServiceDao additionalServiceDao;

@@ -21,6 +21,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 public class IndividualCustomerManagerTest {
+    //Basic Tests
 
     @Mock
     private IndividualCustomerDao individualCustomerDao;

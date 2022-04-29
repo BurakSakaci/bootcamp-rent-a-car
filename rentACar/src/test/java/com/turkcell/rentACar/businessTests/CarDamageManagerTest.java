@@ -2,6 +2,7 @@ package com.turkcell.rentACar.businessTests;
 
 import static org.junit.Assert.*;
 
+import com.turkcell.rentACar.business.abstracts.CarService;
 import com.turkcell.rentACar.business.concrates.CarDamageManager;
 import com.turkcell.rentACar.business.requests.create.CreateCarDamageRequest;
 import com.turkcell.rentACar.core.exceptions.BusinessException;
@@ -19,16 +20,21 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 public class CarDamageManagerTest {
+    //Basic Tests
+
 
     @Mock
     private CarDamageDao carDamageDao;
 
+    @Mock
+    private CarService carService;
     @InjectMocks
     private CarDamageManager carDamageManager;
 
     @Before
     public void setUp() throws Exception {
         carDamageDao = mock(CarDamageDao.class);
+        carService = mock(CarService.class);
         carDamageManager = new CarDamageManager(carDamageDao, new ModelMapperManager(new ModelMapper()), carService);
     }
 

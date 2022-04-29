@@ -22,6 +22,8 @@ import static org.mockito.Mockito.verify;
 
 
 public class BrandManagerTest {
+    //Basic Tests
+
 
     @Mock
     private BrandDao brandDao;

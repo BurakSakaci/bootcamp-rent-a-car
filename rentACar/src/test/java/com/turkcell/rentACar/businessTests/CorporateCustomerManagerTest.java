@@ -20,6 +20,7 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 public class CorporateCustomerManagerTest {
+    //Basic Tests
 
     @Mock
     private CorporateCustomerDao corporateCustomerDao;

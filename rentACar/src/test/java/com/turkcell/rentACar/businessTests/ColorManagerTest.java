@@ -22,6 +22,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 public class ColorManagerTest {
+    //Basic Tests
+
     @Mock
     private ColorDao colorDao;
 
