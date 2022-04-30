@@ -21,8 +21,6 @@ Msrc/main/java/com/turkcell/rentACar/api/controllers/CarDamagesController.java,
 Ysrc/main/java/com/turkcell/rentACar/business/requests/create/CreateCreditCardRequest.java,7\e\7e19476c3f783cf25913ebb46d2b295dc8248294
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-z
-Jsrc/main/java/com/turkcell/rentACar/business/concrates/PaymentManager.java,1\a\1acce9c623674a7b6d85404bc744987d1797804b
 „
 Tsrc/test/java/com/turkcell/rentACar/businessTests/IndividualCustomerManagerTest.java,3\7\37482bb8b70362e54dab0ddd7dfdaf8840d9bc32
 ƒ

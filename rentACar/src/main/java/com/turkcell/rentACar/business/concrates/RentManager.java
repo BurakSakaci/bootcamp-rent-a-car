@@ -25,6 +25,7 @@ import com.turkcell.rentACar.entities.concrates.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -105,7 +106,7 @@ public class RentManager implements RentService {
 		return new SuccessDataResult<>(response, BusinessMessages.GlobalMessages.DATA_GETTED_SUCCESSFULLY);
 	}
 
-	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = BusinessException.class)
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.REPEATABLE_READ, rollbackFor = BusinessException.class)
 	@Override
 	public DataResult<Rent> addRentForIndividualCustomer(CreateRentModel createRentModel) throws BusinessException {
 		
@@ -116,7 +117,7 @@ public class RentManager implements RentService {
 		return new SuccessDataResult<>(rent, BusinessMessages.GlobalMessages.DATA_ADDED_SUCCESSFULLY);
 	}
 
-	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = BusinessException.class)
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.REPEATABLE_READ, rollbackFor = BusinessException.class)
 	@Override
 	public DataResult<Rent> addRentForCorporateCustomer(CreateRentModel createRentModel) throws BusinessException {
 		

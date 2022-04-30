@@ -23,6 +23,7 @@ import com.turkcell.rentACar.entities.concrates.Payment;
 import com.turkcell.rentACar.entities.concrates.Rent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -83,7 +84,7 @@ public class PaymentManager implements PaymentService {
 				BusinessMessages.GlobalMessages.DATA_GETTED_SUCCESSFULLY);
 	}
 
-	@Transactional(rollbackFor = BusinessException.class)
+	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = BusinessException.class)
 	@Override
 	public Result addPaymentForIndividualCustomer(CreatePaymentModel createPaymentModel, CardSaverEnum cardSaverEnum)
 			throws BusinessException {
@@ -95,7 +96,7 @@ public class PaymentManager implements PaymentService {
 		return new SuccessResult(BusinessMessages.GlobalMessages.DATA_ADDED_SUCCESSFULLY);
 	}
 
-	@Transactional(rollbackFor = BusinessException.class)
+	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = BusinessException.class)
 	@Override
 	public Result addPaymentForCorporateCustomer(CreatePaymentModel createPaymentModel, CardSaverEnum cardSaverEnum)
 			throws BusinessException {
