@@ -19,4 +19,6 @@ public interface CityService {
 	Result delete(DeleteCityRequest deleteCityRequest) throws CityException;
 	Result update(UpdateCityRequest updateCityRequest) throws CityException;
 
+	Result isCityExistsById(int cityId) throws CityException;
+
 }

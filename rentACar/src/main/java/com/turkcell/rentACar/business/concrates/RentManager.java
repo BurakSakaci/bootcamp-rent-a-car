@@ -49,6 +49,9 @@ public class RentManager implements RentService {
 	private final PosService posService;
 	private final CreditCardService creditCardService;
 
+	private final CityService cityService;
+
+
 	@Autowired
 	public RentManager(RentDao rentDao, ModelMapperService modelMapperService,
 			@Lazy CarMaintenanceService carMaintenanceService,
@@ -56,7 +59,7 @@ public class RentManager implements RentService {
 			@Lazy IndividualCustomerService individualCustomerService,
 			@Lazy CorporateCustomerService corporateCustomerService, @Lazy CustomerService customerService,
 			CarService carService, @Lazy PaymentService paymentService, @Lazy InvoiceService invoiceService,
-			PosService posService, CreditCardService creditCardService) {
+			PosService posService, CreditCardService creditCardService, CityService cityService) {
 		this.rentDao = rentDao;
 		this.modelMapperService = modelMapperService;
 		this.carMaintenanceService = carMaintenanceService;
@@ -69,6 +72,7 @@ public class RentManager implements RentService {
 		this.invoiceService = invoiceService;
 		this.posService = posService;
 		this.creditCardService = creditCardService;
+		this.cityService = cityService;
 	}
 
 	@Override
@@ -179,9 +183,12 @@ public class RentManager implements RentService {
 	}
 
 	private Rent rentCorrector(CreateRentModel createRentModel) throws BusinessException {
+
 		checkIfDatesCorrect(createRentModel.getCreateRentRequest().getStartDate(), createRentModel.getCreateRentRequest().getFinishDate());
 		checkIfCarExists(createRentModel.getCreateRentRequest().getCarId());
 		checkIfCarIsInMaintenance(createRentModel.getCreateRentRequest().getCarId());
+		checkIfCityIsExist(createRentModel.getCreateRentRequest().getRentedCityId());
+		checkIfCityIsExist(createRentModel.getCreateRentRequest().getDeliveredCityId());
 
 		Rent rent = this.modelMapperService.forRequest().map(createRentModel.getCreateRentRequest(), Rent.class);
 
@@ -198,7 +205,6 @@ public class RentManager implements RentService {
 		}
 	}
 
-	// check it
 	private void checkIfCarIsInMaintenance(int carId) throws BusinessException {
 		DataResult<List<CarMaintenanceListDto>> result = this.carMaintenanceService.getByCarId(carId);
 		List<CarMaintenance> response = result.getData().stream()
@@ -329,6 +335,12 @@ public class RentManager implements RentService {
 	private void checkIfCorporateCustomerExists(int id) throws BusinessException {
 		if (!corporateCustomerService.corporateCustomerExistsById(id).isSuccess()) {
 			throw new BusinessException(BusinessMessages.CorporateCustomerMessages.CORPORATE_CUSTOMER_NOT_FOUND);
+		}
+	}
+
+	private void checkIfCityIsExist(int cityId) throws BusinessException {
+		if(!cityService.isCityExistsById(cityId).isSuccess()){
+			throw new BusinessException(BusinessMessages.RentMessages.CITY_NOT_FOUND);
 		}
 	}
 

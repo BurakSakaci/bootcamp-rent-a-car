@@ -107,7 +107,13 @@ public class CityManager implements CityService{
 		
 		return new SuccessResult(BusinessMessages.GlobalMessages.DATA_UPDATED_SUCCESSFULLY);
 	}
-	
+
+	@Override
+	public Result isCityExistsById(int cityId) throws CityException {
+		checkIfCityExistsById(cityId);
+		return new SuccessResult(BusinessMessages.GlobalMessages.DATA_GETTED_SUCCESSFULLY);
+	}
+
 	@Scheduled(fixedRate = 2000)
 	public void evictAllcachesAtIntervals() {
 		this.cacheService.evictAllCaches();

@@ -19,7 +19,6 @@ public class BusinessMessages {
 
         public static final String ADDITIONAL_SERVICE_ALREADY_EXISTS = "Additional Service is already exists: ";
         public static final String ADDITIONAL_SERVICE_NOT_FOUND = "There is no Additional Service with this id";
-        //public static final String ADDITIONAL_SERVICE_HAS_NO_CHANGES = "This Additional Service Update Has No Changes: ";
     }
 
     public class OrderedAdditionalServiceMessages{
@@ -30,7 +29,6 @@ public class BusinessMessages {
 
         public static final String BRAND_ALREADY_EXISTS = "Brand is already exists: ";
         public static final String BRAND_NOT_FOUND = "There is no Brand with this id: ";
-        //public static final String BRAND_HAS_NO_CHANGES = "This Brand Update Has No Changes: ";
     }
 
     public class CarDamageMessages{
@@ -45,7 +43,6 @@ public class BusinessMessages {
         public static final String CAR_RENT_NOT_FOUND = "There is no Rent for this Car's id: ";
         public static final String CAR_IS_RENTED = "Maintenance is not possible! This car is rented";
         public static final String CAR_MAINTENANCE_NOT_FOUND = "There is no car maintenance with this id: ";
-        //public static final String NO_CHANGES_NO_NEED_TO_UPDATE = "Initial values are completely equal to update values, no need to update!";
         public static final String CAR_IS_ALREADY_AT_MAINTENANCE = "This car is already in maintenance";
     }
 
@@ -68,7 +65,6 @@ public class BusinessMessages {
 
         public static final String COLOR_ALREADY_EXISTS = "Following Color is already exists: ";
         public static final String COLOR_NOT_FOUND = "There is no Color with this id: ";
-        //public static final String COLOR_HAS_NO_CHANGES = "This Color Update Has No Changes: ";
     }
 
     public class CorporateCustomerMessages{
@@ -100,18 +96,15 @@ public class BusinessMessages {
 
     public class InvoiceMessages{
 
-        //public static final String RENTAL_CAR_NOT_FOUND = "There is no Rental Car with this id: ";
         public static final String INVOICE_NOT_FOUND = "There is no Invoice with this id: ";
         public static final String INVOICES_BETWEEN_DATES_LISTED = "Invoices listed between dates.";
     }
 
     public class RentMessages{
 
-        //public static final String CITY_NOT_FOUND = "There is no City with this id: ";
+        public static final String CITY_NOT_FOUND = "There is no City with this id: ";
         public static final String CAR_NOT_FOUND = "There is no Car with following id: ";
         public static final String RENTAL_CAR_NOT_FOUND = "There is no Rental Car with this id: ";
-        //public static final String NO_CHANGES_NO_NEED_TO_UPDATE = "Initial values are completely equal to update values, no need to update!";
-        //public static final String CUSTOMER_NOT_FOUND = "There is no Customer with this id: ";
         public static final String CAR_IS_AT_MAINTENANCE = "This car is in maintenance";
         public static final String CAR_IS_ALREADY_RENTED = "This car is already rented";
         public static final String CAR_RENTAL_ENDED_SUCCESSFULLY = "Car Rental Ended Successfully";

@@ -35,3 +35,7 @@ Gsrc/test/java/com/turkcell/rentACar/businessTests/BrandManagerTest.java,b\c\bc
 Ssrc/test/java/com/turkcell/rentACar/businessTests/AdditionalServiceManagerTest.java,2\e\2ecdcd5df12d09ee0d61202ec9e3b09af0235133
 {
 Ksrc/test/java/com/turkcell/rentACar/businessTests/CarDamageManagerTest.java,4\d\4de823df5f31ae70ca5d454277c48c66bc40f497
+z
+Jsrc/main/java/com/turkcell/rentACar/business/concrates/PaymentManager.java,1\a\1acce9c623674a7b6d85404bc744987d1797804b
+w
+Gsrc/main/java/com/turkcell/rentACar/business/abstracts/RentService.java,b\7\b742607f2b6f1aa3670b2d583219924c9660715e
